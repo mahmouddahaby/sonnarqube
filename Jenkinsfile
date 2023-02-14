@@ -5,9 +5,7 @@ pipeline{
             steps{
             
             script{
-            def pipelineconfig=[
-                sonarQubeServer:'sonarqube-connection',
-            ]
+            
             def repositoryUrl = scm.userRemoteConfigs[0].getUrl()
             def GIT_REPO_NAME = scm.userRemoteConfigs[0].getUrl().tokenize('/').last().split("\\.")[0]
             def scannerHome = tool 'sonarqube-global'
